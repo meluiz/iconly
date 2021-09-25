@@ -16,7 +16,10 @@ export const Button = ({
   type = 'button',
 }: ButtonType) => {
   return (
-    <Base>
+    <Base
+      themeType={theme}
+      type={type}
+    >
       {children}
     </Base>
   )
