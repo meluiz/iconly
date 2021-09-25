@@ -1,6 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const ButtonStyle = styled.button`
+type ButtonType = {
+  themeType: 'icons'
+}
+
+export const ButtonStyle = styled.button<ButtonType>`
   border: 0;
   cursor: pointer;
   background-color: transparent;
