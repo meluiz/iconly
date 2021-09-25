@@ -1,5 +1,8 @@
 /* ------| Styles |------ */
-import { Wrapper } from './styles'
+import {
+  Header,
+  Wrapper,
+} from './styles'
 
 export const Sidebar = () => {
   return (

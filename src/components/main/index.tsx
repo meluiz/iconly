@@ -1,5 +1,7 @@
 /* ------| Styles |------ */
-import { Wrapper } from './styles'
+import {
+  Wrapper,
+} from './styles'
 
 export const Main = () => {
   return (
