@@ -2,6 +2,7 @@
 import { Button } from 'components/button'
 
 /* ------| Styles |------ */
+import { Menu } from 'react-feather'
 import {
   BrandIcon,
   BrandName,
