@@ -70,7 +70,7 @@ export const Main = () => {
             </SocialListItem>
             <SocialListItem>
               <SocialListLinkAlt
-                href='https://www.linkedin.com/in/luiz-felipe-133b4a206/'
+                href='https://meluiz.com'
                 target='_blank'
               >
                 <SocialListLinkAltText>meluiz.com</SocialListLinkAltText>
