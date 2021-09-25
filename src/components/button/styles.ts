@@ -15,9 +15,11 @@ const handleThemeButton = {
     flex-grow: 0;
     border-radius: 8px;
     transition: .15s ease-in-out;
-    color: rgba(255,255,255,.4);
+    color: #fff;
+    opacity: .4;
 
     &:hover {
+      opacity: 1;
       background-color: rgba(255,255,255,.05);
     }
   `,
