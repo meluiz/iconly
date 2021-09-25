@@ -14,6 +14,6 @@ export const Container = styled.div`
   height: 100%;
   display: grid;
   grid-template-columns: 280px 1fr;
-  grid-template-areas: 'Sidebar Content';
+  grid-template-areas: 'sidebar content';
   position: relative;
 `
