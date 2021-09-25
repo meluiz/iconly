@@ -125,7 +125,7 @@ export const NavigationListLink = styled.a`
 
 `
 
-export const NavigationListLinkGroup = styled.a`
+export const NavigationListLinkGroup = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
