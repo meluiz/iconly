@@ -23,6 +23,8 @@ export const Header = styled.div`
   padding-left: 28px;
   padding-right: 28px;
   position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
   border-bottom: 1px solid rgba(255,255,255,.08);
 `
 
