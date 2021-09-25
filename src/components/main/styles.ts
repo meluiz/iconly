@@ -136,3 +136,105 @@ export const SocialListLinkAltText = styled.span`
   display: inline-block;
   padding: 0 16px;
 `
+
+export const Content = styled.section`
+  width: 100%;
+  height: 100%;
+  position: relative;
+`
+
+export const IconGrid = styled.div`
+  width: 100%;
+  display: grid;
+  padding: 24px 32px;
+  gap: 8px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: auto;
+  transition: .15s ease-in-out;
+  overflow: hidden;
+  overflow-y: auto;
+`
+
+export const IconCard = styled.div`
+  height: 144px;
+  position: relative;
+  animation: fadein 250ms ease both;
+
+  @keyframes fadein {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
+`
+
+export const IconCardContent = styled.div`${({ theme }) => css`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  color: rgba(255,255,255,.5);
+  background-color: ${theme.colors.background.secondary};
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  &:hover {
+    background-image: linear-gradient(
+      ${theme.colors.background.secondary},
+      ${theme.colors.background.secondary}),
+      linear-gradient(
+        90deg,
+        ${theme.colors.primary} 0%,
+        ${theme.colors.secondary} 95%
+      );
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+    ${IconCardTag} {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+`}`
+
+export const IconCardInner = styled.div`
+  width: 100%;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+`
+
+export const IconCardIcon = styled.div`
+  height: 24px;
+  margin-bottom: 8px;
+  color: #fff;
+`
+
+export const IconCardText = styled.span`
+  width: 100%;
+  padding: 0 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 12px;
+  line-height: 2;
+  color: rgba(255,255,255,.5);
+  font-family: 'Inter',Arial,Helvetica,sans-serif;
+`
+
+export const IconCardTag = styled.div`${({ theme }) => css`
+  border-radius: 0 8px;
+  padding: 6px 8px;
+  position: absolute;
+  top: -2px; right: -2px;
+  background: linear-gradient(56deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 95%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  visibility: hidden;
+  opacity: 0;
+`}`
