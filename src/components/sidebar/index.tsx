@@ -25,9 +25,7 @@ export const Sidebar = () => {
             theme='icons'
             type='button'
           >
-            <Menu
-              size={24}
-            />
+            <Menu size={24} />
           </Button>
         </HeaderContainer>
       </Header>
