@@ -4,10 +4,18 @@ import { Button } from 'components/button'
 /* ------| Styles |------ */
 import { Codepen, GitHub, Linkedin, Search } from 'react-feather'
 import {
+  Content,
   Form,
   FormContent,
   FormInput,
   Header,
+  IconCard,
+  IconCardContent,
+  IconCardIcon,
+  IconCardInner,
+  IconCardTag,
+  IconCardText,
+  IconGrid,
   Social,
   SocialList,
   SocialListItem,
@@ -71,6 +79,120 @@ export const Main = () => {
           </SocialList>
         </Social>
       </Header>
+      <Content>
+        <IconGrid>
+          <IconCard>
+            <IconCardContent>
+              <IconCardInner>
+                <IconCardIcon>
+                  <Codepen size={20} />
+                </IconCardIcon>
+                <IconCardText>Codepen</IconCardText>
+              </IconCardInner>
+              <IconCardTag>Free</IconCardTag>
+            </IconCardContent>
+          </IconCard>
+          <IconCard>
+            <IconCardContent>
+              <IconCardInner>
+                <IconCardIcon>
+                  <Codepen size={20} />
+                </IconCardIcon>
+                <IconCardText>Codepen</IconCardText>
+              </IconCardInner>
+              <IconCardTag>Free</IconCardTag>
+            </IconCardContent>
+          </IconCard>
+          <IconCard>
+            <IconCardContent>
+              <IconCardInner>
+                <IconCardIcon>
+                  <Codepen size={20} />
+                </IconCardIcon>
+                <IconCardText>Codepen</IconCardText>
+              </IconCardInner>
+              <IconCardTag>Free</IconCardTag>
+            </IconCardContent>
+          </IconCard>
+          <IconCard>
+            <IconCardContent>
+              <IconCardInner>
+                <IconCardIcon>
+                  <Codepen size={20} />
+                </IconCardIcon>
+                <IconCardText>Codepen</IconCardText>
+              </IconCardInner>
+              <IconCardTag>Free</IconCardTag>
+            </IconCardContent>
+          </IconCard>
+          <IconCard>
+            <IconCardContent>
+              <IconCardInner>
+                <IconCardIcon>
+                  <Codepen size={20} />
+                </IconCardIcon>
+                <IconCardText>Codepen</IconCardText>
+              </IconCardInner>
+              <IconCardTag>Free</IconCardTag>
+            </IconCardContent>
+          </IconCard>
+          <IconCard>
+            <IconCardContent>
+              <IconCardInner>
+                <IconCardIcon>
+                  <Codepen size={20} />
+                </IconCardIcon>
+                <IconCardText>Codepen</IconCardText>
+              </IconCardInner>
+              <IconCardTag>Free</IconCardTag>
+            </IconCardContent>
+          </IconCard>
+          <IconCard>
+            <IconCardContent>
+              <IconCardInner>
+                <IconCardIcon>
+                  <Codepen size={20} />
+                </IconCardIcon>
+                <IconCardText>Codepen</IconCardText>
+              </IconCardInner>
+              <IconCardTag>Free</IconCardTag>
+            </IconCardContent>
+          </IconCard>
+          <IconCard>
+            <IconCardContent>
+              <IconCardInner>
+                <IconCardIcon>
+                  <Codepen size={20} />
+                </IconCardIcon>
+                <IconCardText>Codepen</IconCardText>
+              </IconCardInner>
+              <IconCardTag>Free</IconCardTag>
+            </IconCardContent>
+          </IconCard>
+          <IconCard>
+            <IconCardContent>
+              <IconCardInner>
+                <IconCardIcon>
+                  <Codepen size={20} />
+                </IconCardIcon>
+                <IconCardText>Codepen</IconCardText>
+              </IconCardInner>
+              <IconCardTag>Free</IconCardTag>
+            </IconCardContent>
+          </IconCard>
+          <IconCard>
+            <IconCardContent>
+              <IconCardInner>
+                <IconCardIcon>
+                  <Codepen size={20} />
+                </IconCardIcon>
+                <IconCardText>Codepen</IconCardText>
+              </IconCardInner>
+              <IconCardTag>Free</IconCardTag>
+            </IconCardContent>
+          </IconCard>
+        </IconGrid>
+      </Content>
     </Wrapper>
   )
 }
