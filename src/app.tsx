@@ -1,7 +1,12 @@
+/* ------| Styles |------ */
+import { Container, Wrapper } from 'styles/layout'
+
 export function App () {
   return (
-    <div className='App'>
-      Aplicação
-    </div>
+    <Wrapper>
+      <Container>
+        Aplicação
+      </Container>
+    </Wrapper>
   )
 }
