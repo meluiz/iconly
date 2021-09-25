@@ -1,5 +1,10 @@
 import styled, { css } from 'styled-components'
 
+type NavigationListItemType = {
+  activedIcons?: boolean
+  activedCategory?: boolean
+}
+
 export const Wrapper = styled.aside`${({ theme }) => css`
   grid-area: sidebar;
   display: flex;
