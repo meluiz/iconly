@@ -1,3 +1,6 @@
+/* ------| Components |------ */
+import { Button } from 'components/button'
+
 /* ------| Styles |------ */
 import {
   BrandIcon,
