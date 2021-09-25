@@ -51,3 +51,91 @@ export const BrandName = styled.span`
   color: white;
   font-family: 'Circular', 'sans-serif';
 `
+
+export const Navigation = styled.nav`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 24px 0;
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+`
+
+export const NavigationGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const NavigationList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`
+
+export const NavigationListItem = styled.li<NavigationListItemType>`${({ theme, activedIcons, activedCategory }) => css`
+  min-height: 0;
+  position: relative;
+
+  ${activedIcons && css`
+    ${NavigationListLink} {
+      opacity: 1;
+      background: linear-gradient(90deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 95%);
+
+      &:hover {
+      opacity: 1;
+      background: linear-gradient(90deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 95%);
+      }
+    }
+  `}
+
+  ${activedCategory && css`
+    ${NavigationListLink} {
+      opacity: 1;
+    }
+  `}
+`}`
+
+export const NavigationListLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0 32px 0 28px;
+  height: 32px;
+  color: #fff;
+  opacity: .4;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+
+  &:focus { outline: none }
+  &:hover {
+    opacity: 1;
+    background: rgba(255,255,255,.04);
+  }
+
+`
+
+export const NavigationListLinkGroup = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`
+
+export const NavigationListLinkIcon = styled.span`
+  color: #fff;
+  display: flex;
+  align-items: center;
+`
+
+export const NavigationListLinkText = styled.span`
+  color: #fff;
+  font-size: 14px;
+`
+
+export const NavigationListLinkCounter = styled.span`
+  color: #fff;
+  font-size: 14px;
+`
