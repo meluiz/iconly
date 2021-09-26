@@ -94,7 +94,7 @@ export const Main = ({
         actual: page.current.next + 1,
         next: page.current.next + page.current.perPage,
       }
-      
+
       const timing = setTimeout(() => {
         setIcons(prev => prev?.concat(data))
         if (page.current.actual > category.content.length) setLoading(false)
