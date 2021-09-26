@@ -4,6 +4,7 @@ import { MouseEvent, useState } from 'react'
 import { useIcons } from 'hooks/useIcons'
 
 /* ------| Components |------ */
+import { IconSingle } from 'components/icon-single'
 import { Main } from 'components/main'
 import { Sidebar } from 'components/sidebar'
 
@@ -24,6 +25,7 @@ export function App () {
 
   return (
     <Wrapper>
+      <IconSingle />
       <Container>
         <Sidebar
           menuActived={menuActived}
