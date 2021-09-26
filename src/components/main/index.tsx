@@ -127,7 +127,7 @@ export const Main = ({
                       __html: icon.icon,
                     }}
                   />
-                  <IconCardText>{icon.name}</IconCardText>
+                  <IconCardText>{icon.slug}</IconCardText>
                 </IconCardInner>
                 <IconCardTag>Free</IconCardTag>
               </IconCardContent>
