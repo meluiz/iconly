@@ -33,8 +33,8 @@ export function App () {
           handleSidebarMenu={handleSidebarMenu}
         />
         <Main
-          handleSidebarMenu={handleSidebarMenu}
           category={categories.find(category => category.isActived === true)}
+          handleSidebarMenu={handleSidebarMenu}
         />
       </Container>
     </Wrapper>
