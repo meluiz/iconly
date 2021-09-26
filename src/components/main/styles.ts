@@ -139,21 +139,28 @@ export const SocialListLinkAltText = styled.span`
 `
 
 export const Content = styled.section`
-  width: 100%;
-  height: 100%;
-  position: relative;
+  min-height: 0;
+  transition: .15s ease-in-out;
+  overflow-y: auto;
 `
 
 export const IconGrid = styled.div`
-  width: 100%;
   display: grid;
   padding: 24px 32px;
   gap: 8px;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: auto;
-  transition: .15s ease-in-out;
-  overflow: hidden;
-  overflow-y: auto;
+  grid-template-columns: minmax(0, 1fr);
+
+  @media screen and (min-width: 640px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
 `
 
 export const IconCard = styled.div`
