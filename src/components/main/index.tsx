@@ -82,6 +82,14 @@ export const Main = ({
     }
   }, [category])
 
+  const handleScroll = () => {
+    if (category) {
+      const data = [...category.content].slice(
+        page.current.actual,
+        page.current.next,
+      )
+    }
+  }
 
   useEffect(() => {
     const intersection = new IntersectionObserver((entries) => {
