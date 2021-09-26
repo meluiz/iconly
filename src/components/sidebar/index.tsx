@@ -7,7 +7,7 @@ import { CategoriesType } from 'hooks/useIcons'
 import { Button } from 'components/button'
 
 /* ------| Styles |------ */
-import { Feather, GitHub, Menu, Terminal } from 'react-feather'
+import { Menu } from 'react-feather'
 import {
   BrandIcon,
   BrandName,
