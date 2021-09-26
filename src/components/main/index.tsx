@@ -88,6 +88,13 @@ export const Main = ({
         page.current.actual,
         page.current.next,
       )
+
+      page.current = {
+        ...page.current,
+        actual: page.current.next + 1,
+        next: page.current.next + page.current.perPage,
+      }
+      
     }
   }
 
