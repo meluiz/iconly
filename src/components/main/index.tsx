@@ -58,6 +58,15 @@ export const Main = ({
     perPage: 36,
   })
 
+  useEffect(() => {
+    setLoading(true)
+    page.current = {
+      actual: 0,
+      next: 36,
+      perPage: 36,
+    }
+  }, [category])
+
   return (
     <Wrapper>
       <Header>
