@@ -39,7 +39,7 @@ export const useIcons = () => {
         return icon
       }))
     }
-  }, [])
+  }, [categories])
 
   const handleActiveCategory = (id: string) => (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
