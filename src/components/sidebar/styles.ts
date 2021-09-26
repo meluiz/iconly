@@ -1,11 +1,16 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
+
+type WrapperType = {
+  theme: DefaultTheme
+  actived: boolean
+}
 
 type NavigationListItemType = {
   activedIcons?: boolean
   activedCategory?: boolean
 }
 
-export const Wrapper = styled.aside`${({ theme }) => css`
+export const Wrapper = styled.aside`${({ theme, actived }: WrapperType) => css`
   width: 100%;
   height: 100vh;
   display: flex;
@@ -16,6 +21,10 @@ export const Wrapper = styled.aside`${({ theme }) => css`
   z-index: 9999;
   transition: all 300ms ease;
   transform: translate3D(-100%, 0, 0);
+
+  ${actived && css`
+    transform: translate3D(0, 0, 0);
+  `}
   
   @media screen and (min-width: 420px) {
     max-width: 280px;

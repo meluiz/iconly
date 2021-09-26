@@ -1,3 +1,5 @@
+import { MouseEvent } from 'react'
+
 /* ------| Hooks |------ */
 import { CategoriesType } from 'hooks/useIcons'
 
@@ -38,10 +40,12 @@ import {
 /* ------| Types |------ */
 type MainType = {
   category?: CategoriesType
+  handleSidebarMenu: (event: MouseEvent<HTMLButtonElement>) => void
 }
 
 export const Main = ({
   category,
+  handleSidebarMenu,
 }: MainType) => {
   return (
     <Wrapper>

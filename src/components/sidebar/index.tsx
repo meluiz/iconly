@@ -29,15 +29,19 @@ import {
 
 type SidebarType = {
   categories: CategoriesType[]
+  menuActived: boolean
   handleActiveCategory: (id: string) => (event: MouseEvent<HTMLAnchorElement>) => void
+  handleSidebarMenu: (event: MouseEvent<HTMLButtonElement>) => void
 }
 
 export const Sidebar = ({
   categories,
+  menuActived,
   handleActiveCategory,
+  handleSidebarMenu,
 }: SidebarType) => {
   return (
-    <Wrapper>
+    <Wrapper actived={menuActived}>
       <Header>
         <HeaderContainer>
           <HeaderBrand>
