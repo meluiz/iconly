@@ -1,3 +1,6 @@
+/* ------| Hooks |------ */
+import { CategoriesType } from 'hooks/useIcons'
+
 /* ------| Components |------ */
 import { Button } from 'components/button'
 
@@ -25,7 +28,14 @@ import {
   Wrapper,
 } from './styles'
 
-export const Main = () => {
+/* ------| Types |------ */
+type MainType = {
+  category?: CategoriesType
+}
+
+export const Main = ({
+  category,
+}: MainType) => {
   return (
     <Wrapper>
       <Header>
