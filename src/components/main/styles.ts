@@ -142,6 +142,11 @@ export const Content = styled.section`
   min-height: 0;
   transition: .15s ease-in-out;
   overflow-y: auto;
+  
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 `
 
 export const IconGrid = styled.div`
