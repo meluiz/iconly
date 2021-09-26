@@ -11,12 +11,14 @@ import { Container, Wrapper } from 'styles/layout'
 export function App () {
   const {
     categories,
+    handleActiveCategory,
   } = useIcons()
   return (
     <Wrapper>
       <Container>
         <Sidebar
           categories={categories}
+          handleActiveCategory={handleActiveCategory}
         />
       </Container>
     </Wrapper>
