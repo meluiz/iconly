@@ -32,7 +32,7 @@ type SidebarType = {
   category?: CategoriesType
   menuActived: boolean
   handleActiveCategory: (id: string) => (event: MouseEvent<HTMLAnchorElement>) => void
-  handleSidebarMenu: (event: MouseEvent<HTMLButtonElement>) => void
+  handleSidebarMenu: (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLAnchorElement>) => void
 }
 
 export const Sidebar = ({

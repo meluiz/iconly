@@ -17,7 +17,7 @@ export function App () {
     handleActiveCategory,
   } = useIcons()
 
-  const handleSidebarMenu = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleSidebarMenu = (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
     setMenuActived(actived => !actived)
   }
