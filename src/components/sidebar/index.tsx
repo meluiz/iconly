@@ -93,7 +93,6 @@ export const Sidebar = ({
                   <NavigationListLinkCounter>{category.content.length}</NavigationListLinkCounter>
                 </NavigationListLink>
               </NavigationListItem>
-
             )}
           </NavigationList>
         </NavigationGroup>
