@@ -1,3 +1,1 @@
-export const useIcons = () => {
-  return {}
-}
+import Categories from 'data/icons.json'
