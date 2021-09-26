@@ -1,3 +1,8 @@
+import { MouseEvent } from 'react'
+
+/* ------| Hooks |------ */
+import { CategoriesType } from 'hooks/useIcons'
+
 /* ------| Components |------ */
 import { Button } from 'components/button'
 
@@ -21,7 +26,15 @@ import {
   Wrapper,
 } from './styles'
 
-export const Sidebar = () => {
+type SidebarType = {
+  categories: CategoriesType[]
+  handleActiveCategory: (id: string) => (event: MouseEvent<HTMLAnchorElement>) => void
+}
+
+export const Sidebar = ({
+  categories,
+  handleActiveCategory,
+}: SidebarType) => {
   return (
     <Wrapper>
       <Header>
