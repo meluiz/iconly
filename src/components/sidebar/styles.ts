@@ -18,7 +18,7 @@ export const Wrapper = styled.aside`${({ theme, actived }: WrapperType) => css`
   position: absolute;
   overflow: hidden;
   background-color: ${theme.colors.background.secondary};
-  z-index: 9999;
+  z-index: 10;
   transition: all 300ms ease;
   transform: translate3D(-100%, 0, 0);
 
