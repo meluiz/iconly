@@ -91,9 +91,10 @@ export const Main = ({
       </Header>
       <Content>
         <IconGrid>
-          <IconCard>
-            <IconCardContent>
-              <IconCardInner>
+          {category && category.content.map((icon) => (
+            <IconCard key={icon.slug}>
+              <IconCardContent>
+                <IconCardInner>
                 <IconCardIcon>
                   <Codepen size={20} />
                 </IconCardIcon>
@@ -102,105 +103,7 @@ export const Main = ({
               <IconCardTag>Free</IconCardTag>
             </IconCardContent>
           </IconCard>
-          <IconCard>
-            <IconCardContent>
-              <IconCardInner>
-                <IconCardIcon>
-                  <Codepen size={20} />
-                </IconCardIcon>
-                <IconCardText>Codepen</IconCardText>
-              </IconCardInner>
-              <IconCardTag>Free</IconCardTag>
-            </IconCardContent>
-          </IconCard>
-          <IconCard>
-            <IconCardContent>
-              <IconCardInner>
-                <IconCardIcon>
-                  <Codepen size={20} />
-                </IconCardIcon>
-                <IconCardText>Codepen</IconCardText>
-              </IconCardInner>
-              <IconCardTag>Free</IconCardTag>
-            </IconCardContent>
-          </IconCard>
-          <IconCard>
-            <IconCardContent>
-              <IconCardInner>
-                <IconCardIcon>
-                  <Codepen size={20} />
-                </IconCardIcon>
-                <IconCardText>Codepen</IconCardText>
-              </IconCardInner>
-              <IconCardTag>Free</IconCardTag>
-            </IconCardContent>
-          </IconCard>
-          <IconCard>
-            <IconCardContent>
-              <IconCardInner>
-                <IconCardIcon>
-                  <Codepen size={20} />
-                </IconCardIcon>
-                <IconCardText>Codepen</IconCardText>
-              </IconCardInner>
-              <IconCardTag>Free</IconCardTag>
-            </IconCardContent>
-          </IconCard>
-          <IconCard>
-            <IconCardContent>
-              <IconCardInner>
-                <IconCardIcon>
-                  <Codepen size={20} />
-                </IconCardIcon>
-                <IconCardText>Codepen</IconCardText>
-              </IconCardInner>
-              <IconCardTag>Free</IconCardTag>
-            </IconCardContent>
-          </IconCard>
-          <IconCard>
-            <IconCardContent>
-              <IconCardInner>
-                <IconCardIcon>
-                  <Codepen size={20} />
-                </IconCardIcon>
-                <IconCardText>Codepen</IconCardText>
-              </IconCardInner>
-              <IconCardTag>Free</IconCardTag>
-            </IconCardContent>
-          </IconCard>
-          <IconCard>
-            <IconCardContent>
-              <IconCardInner>
-                <IconCardIcon>
-                  <Codepen size={20} />
-                </IconCardIcon>
-                <IconCardText>Codepen</IconCardText>
-              </IconCardInner>
-              <IconCardTag>Free</IconCardTag>
-            </IconCardContent>
-          </IconCard>
-          <IconCard>
-            <IconCardContent>
-              <IconCardInner>
-                <IconCardIcon>
-                  <Codepen size={20} />
-                </IconCardIcon>
-                <IconCardText>Codepen</IconCardText>
-              </IconCardInner>
-              <IconCardTag>Free</IconCardTag>
-            </IconCardContent>
-          </IconCard>
-          <IconCard>
-            <IconCardContent>
-              <IconCardInner>
-                <IconCardIcon>
-                  <Codepen size={20} />
-                </IconCardIcon>
-                <IconCardText>Codepen</IconCardText>
-              </IconCardInner>
-              <IconCardTag>Free</IconCardTag>
-            </IconCardContent>
-          </IconCard>
+          ))}
         </IconGrid>
       </Content>
     </Wrapper>
