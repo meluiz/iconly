@@ -52,7 +52,11 @@ export const Main = ({
   const [loading, setLoading] = useState(true)
   const sentilRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
-
+  const page = useRef({
+    actual: 0,
+    next: 36,
+    perPage: 36,
+  })
 
   return (
     <Wrapper>
