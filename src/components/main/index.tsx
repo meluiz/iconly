@@ -97,6 +97,7 @@ export const Main = ({
       
       const timing = setTimeout(() => {
         setIcons(prev => prev?.concat(data))
+        if (page.current.actual > category.content.length) setLoading(false)
 
         clearTimeout(timing)
       }, 1000)
