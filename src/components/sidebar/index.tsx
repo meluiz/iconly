@@ -86,114 +86,15 @@ export const Sidebar = ({
         </NavigationGroup>
         <NavigationGroup>
           <NavigationList>
-            <NavigationListItem activedCategory>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>All</NavigationListLinkText>
-                <NavigationListLinkCounter>125</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Buildings</NavigationListLinkText>
-                <NavigationListLinkCounter>20</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Business</NavigationListLinkText>
-                <NavigationListLinkCounter>18</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Communication</NavigationListLinkText>
-                <NavigationListLinkCounter>16</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Design</NavigationListLinkText>
-                <NavigationListLinkCounter>23</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Development</NavigationListLinkText>
-                <NavigationListLinkCounter>2</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Device</NavigationListLinkText>
-                <NavigationListLinkCounter>8</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Document</NavigationListLinkText>
-                <NavigationListLinkCounter>25</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Editor</NavigationListLinkText>
-                <NavigationListLinkCounter>26</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Finance</NavigationListLinkText>
-                <NavigationListLinkCounter>12</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Health & Medical</NavigationListLinkText>
-                <NavigationListLinkCounter>22</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Logos</NavigationListLinkText>
-                <NavigationListLinkCounter>3</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Map</NavigationListLinkText>
-                <NavigationListLinkCounter>12</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Media</NavigationListLinkText>
-                <NavigationListLinkCounter>45</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>System</NavigationListLinkText>
-                <NavigationListLinkCounter>8</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>User & Faces</NavigationListLinkText>
-                <NavigationListLinkCounter>7</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Weather</NavigationListLinkText>
-                <NavigationListLinkCounter>15</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationListLink href='/#'>
-                <NavigationListLinkText>Others</NavigationListLinkText>
-                <NavigationListLinkCounter>25</NavigationListLinkCounter>
-              </NavigationListLink>
-            </NavigationListItem>
+            {category && (
+              <NavigationListItem activedCategory>
+                <NavigationListLink href='/#'>
+                  <NavigationListLinkText>All</NavigationListLinkText>
+                  <NavigationListLinkCounter>{category.content.length}</NavigationListLinkCounter>
+                </NavigationListLink>
+              </NavigationListItem>
+
+            )}
           </NavigationList>
         </NavigationGroup>
       </Navigation>
