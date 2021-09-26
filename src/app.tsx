@@ -20,6 +20,9 @@ export function App () {
           categories={categories}
           handleActiveCategory={handleActiveCategory}
         />
+        <Main
+          category={categories.find(category => category.isActived === true)}
+        />
       </Container>
     </Wrapper>
   )
