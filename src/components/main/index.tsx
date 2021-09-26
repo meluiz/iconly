@@ -82,6 +82,16 @@ export const Main = ({
     }
   }, [category])
 
+
+  useEffect(() => {
+    const intersection = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) handleScroll()
+    })
+
+    if (sentilRef.current) intersection.observe(sentilRef.current)
+    return () => intersection.disconnect()
+  })
+
   return (
     <Wrapper>
       <Header>
