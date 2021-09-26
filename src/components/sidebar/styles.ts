@@ -6,13 +6,29 @@ type NavigationListItemType = {
 }
 
 export const Wrapper = styled.aside`${({ theme }) => css`
-  grid-area: sidebar;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  flex: content;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   background-color: ${theme.colors.background.secondary};
+  z-index: 9999;
+  transition: all 300ms ease;
+  transform: translate3D(-100%, 0, 0);
+  
+  @media screen and (min-width: 420px) {
+    max-width: 280px;
+  }
+  
+  @media screen and (min-width: 1280px) {
+    width: initial;
+    height: initial;
+    grid-area: sidebar;
+    position: relative;
+    transition: all 300ms ease;
+    transform: translate3D(0, 0, 0);
+  }
 `}`
 
 export const Header = styled.div`
