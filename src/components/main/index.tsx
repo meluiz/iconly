@@ -65,6 +65,9 @@ export const Main = ({
       next: 36,
       perPage: 36,
     }
+
+    if (contentRef.current) contentRef.current.scroll(0, 0)
+
   }, [category])
 
   return (
