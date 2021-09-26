@@ -19,3 +19,26 @@ export type CategoriesType = {
     total: number
     content: IconsType[]
 }
+
+export const useIcons = () => {
+  const [categories, setCategories] = useState<CategoriesType[]>(Categories)
+
+  useEffect(() => {
+    const actived = categories.find(icon => icon.isActived === true)
+    if (!actived) {
+      setCategories((oldCategories) => oldCategories.map(icon => {
+        if (icon.slug === 'feathericons') {
+          return {
+            ...icon,
+            isActived: true,
+          }
+        }
+        return icon
+      }))
+    }
+  }, [])
+  
+  return {
+    categories,
+  }
+}
