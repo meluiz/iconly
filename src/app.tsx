@@ -13,6 +13,7 @@ export function App () {
     categories,
     handleActiveCategory,
   } = useIcons()
+
   return (
     <Wrapper>
       <Container>
