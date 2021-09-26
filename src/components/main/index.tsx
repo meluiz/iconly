@@ -50,6 +50,9 @@ export const Main = ({
 }: MainType) => {
   const [icons, setIcons] = useState<IconsType[]>()
   const [loading, setLoading] = useState(true)
+  const sentilRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+
 
   return (
     <Wrapper>
@@ -113,7 +116,7 @@ export const Main = ({
           </SocialList>
         </Social>
       </Header>
-      <Content>
+      <Content ref={contentRef}>
         <IconGrid>
           {category && category.content.map((icon) => (
             <IconCard key={icon.slug}>
@@ -130,6 +133,8 @@ export const Main = ({
               </IconCardContent>
             </IconCard>
           ))}
+
+          <CardLoader ref={sentilRef} />
         </IconGrid>
       </Content>
     </Wrapper>
