@@ -67,7 +67,19 @@ export const Main = ({
     }
 
     if (contentRef.current) contentRef.current.scroll(0, 0)
+    if (category) {
+      const data = [...category.content].slice(
+        page.current.actual,
+        page.current.next,
+      )
 
+      setIcons(data)
+      page.current = {
+        ...page.current,
+        actual: page.current.next + 1,
+        next: page.current.next + page.current.perPage,
+      }
+    }
   }, [category])
 
   return (
