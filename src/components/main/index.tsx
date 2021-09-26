@@ -3,6 +3,13 @@ import { CategoriesType } from 'hooks/useIcons'
 
 /* ------| Components |------ */
 import { Button } from 'components/button'
+import {
+  Codepen,
+  GitHub,
+  Linkedin,
+  Menu,
+  Search,
+} from 'react-feather'
 
 /* ------| Styles |------ */
 import { MenuToggler } from 'styles/layout'
