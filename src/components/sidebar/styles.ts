@@ -135,6 +135,11 @@ export const NavigationListLinkIcon = styled.span`
   color: #fff;
   display: flex;
   align-items: center;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 `
 
 export const NavigationListLinkText = styled.span`
