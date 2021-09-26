@@ -5,6 +5,7 @@ import { CategoriesType } from 'hooks/useIcons'
 
 /* ------| Components |------ */
 import { Button } from 'components/button'
+import { Menu } from 'react-feather'
 
 /* ------| Styles |------ */
 import { Menu } from 'react-feather'
