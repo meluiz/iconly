@@ -16,6 +16,7 @@ import {
 /* ------| Styles |------ */
 import { MenuToggler } from 'styles/layout'
 import {
+  CardLoader,
   Content,
   Form,
   FormContent,

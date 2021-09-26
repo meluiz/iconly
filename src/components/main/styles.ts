@@ -251,3 +251,27 @@ export const IconCardTag = styled.div`${({ theme }) => css`
   visibility: hidden;
   opacity: 0;
 `}`
+
+export const CardLoader = styled(IconCard)`
+  background-color: rgba(255,255,255,.02);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .04), transparent);
+    animation: loading 1s infinite;
+  }
+
+  @keyframes loading {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+`
