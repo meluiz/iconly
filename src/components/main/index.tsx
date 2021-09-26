@@ -48,6 +48,9 @@ export const Main = ({
   category,
   handleSidebarMenu,
 }: MainType) => {
+  const [icons, setIcons] = useState<IconsType[]>()
+  const [loading, setLoading] = useState(true)
+
   return (
     <Wrapper>
       <Header>
