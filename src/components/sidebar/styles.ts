@@ -141,7 +141,7 @@ export const NavigationListLink = styled.a`
   color: #fff;
   opacity: .4;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-
+  
   &:focus { outline: none }
   &:hover {
     opacity: 1;
