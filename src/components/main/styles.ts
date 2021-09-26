@@ -244,7 +244,7 @@ export const IconCardTag = styled.div`${({ theme }) => css`
   padding: 6px 8px;
   position: absolute;
   top: -2px; right: -2px;
-  background: linear-gradient(56deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 95%);
+  background: ${theme.colors.secondary};
   color: #fff;
   font-size: 12px;
   font-weight: 500;
