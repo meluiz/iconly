@@ -68,7 +68,10 @@ export const Sidebar = ({
               <NavigationListItem key={category.slug} activedIcons={category.isActived}>
                 <NavigationListLink
                   href='/'
-                  onClick={handleActiveCategory(category.slug)}
+                  onClick={(event) => {
+                    handleActiveCategory(category.slug)(event)
+                    handleSidebarMenu(event)
+                  }}
                 >
                   <NavigationListLinkGroup>
                     <NavigationListLinkIcon
