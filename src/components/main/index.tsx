@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react'
+import { MouseEvent, useEffect, useRef, useState } from 'react'
 
 /* ------| Hooks |------ */
 import { CategoriesType, IconsType } from 'hooks/useIcons'
