@@ -28,6 +28,7 @@ export function App () {
         <Sidebar
           menuActived={menuActived}
           categories={categories}
+          category={categories.find(category => category.isActived === true)}
           handleActiveCategory={handleActiveCategory}
           handleSidebarMenu={handleSidebarMenu}
         />
