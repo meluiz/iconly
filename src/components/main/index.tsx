@@ -118,7 +118,7 @@ export const Main = ({
       </Header>
       <Content ref={contentRef}>
         <IconGrid>
-          {category && category.content.map((icon) => (
+          {icons && icons.map((icon) => (
             <IconCard key={icon.slug}>
               <IconCardContent>
                 <IconCardInner>
