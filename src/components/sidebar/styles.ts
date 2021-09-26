@@ -118,8 +118,8 @@ export const NavigationListItem = styled.li<NavigationListItemType>`${({ theme, 
       background: linear-gradient(90deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 95%);
 
       &:hover {
-      opacity: 1;
-      background: linear-gradient(90deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 95%);
+        opacity: 1;
+        background: linear-gradient(90deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 95%);
       }
     }
   `}
