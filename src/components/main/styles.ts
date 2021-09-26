@@ -150,30 +150,21 @@ export const Content = styled.section`
 `
 
 export const IconGrid = styled.div`
-  display: block;
-  min-height: 0;
-  position: relative;
+  display: grid;
+  padding: 24px 32px;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1fr);
 
-  & .infinite-scroll-component__outerdiv {
-    width: 100%;
+  @media screen and (min-width: 640px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
 
-    & .infinite-scroll-component {
-      display: grid;
-      padding: 24px 32px;
-      gap: 8px;
-      grid-template-columns: minmax(0, 1fr);
-      @media screen and (min-width: 640px) {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-      }
+  @media screen and (min-width: 768px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
 
-      @media screen and (min-width: 768px) {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-      }
-
-      @media screen and (min-width: 1024px) {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-      }
-    }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   }
 `
 
