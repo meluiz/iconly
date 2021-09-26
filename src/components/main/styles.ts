@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.aside`${({ theme }) => css`
+export const Wrapper = styled.main`${({ theme }) => css`
   grid-area: content;
   display: flex;
   flex-direction: column;
