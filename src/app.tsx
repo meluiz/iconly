@@ -9,11 +9,15 @@ import { Sidebar } from 'components/sidebar'
 import { Container, Wrapper } from 'styles/layout'
 
 export function App () {
+  const {
+    categories,
+  } = useIcons()
   return (
     <Wrapper>
       <Container>
-        <Sidebar />
-        <Main />
+        <Sidebar
+          categories={categories}
+        />
       </Container>
     </Wrapper>
   )
