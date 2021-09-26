@@ -5,7 +5,7 @@ import { CategoriesType } from 'hooks/useIcons'
 import { Button } from 'components/button'
 
 /* ------| Styles |------ */
-import { Codepen, GitHub, Linkedin, Search } from 'react-feather'
+import { MenuToggler } from 'styles/layout'
 import {
   Content,
   Form,
@@ -39,6 +39,15 @@ export const Main = ({
   return (
     <Wrapper>
       <Header>
+        <MenuToggler>
+          <Button
+            theme='icons'
+            type='button'
+            onClick={handleSidebarMenu}
+          >
+            <Menu />
+          </Button>
+        </MenuToggler>
         <Form>
           <FormContent>
             <Button

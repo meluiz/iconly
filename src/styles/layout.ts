@@ -22,3 +22,12 @@ export const Container = styled.div`
     grid-template-areas: 'sidebar content';
   }
 `
+
+export const MenuToggler = styled.div`
+  min-height: 0;
+  position: relative;
+
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+`

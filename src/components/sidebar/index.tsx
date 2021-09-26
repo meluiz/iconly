@@ -8,7 +8,7 @@ import { Button } from 'components/button'
 import { Menu } from 'react-feather'
 
 /* ------| Styles |------ */
-import { Menu } from 'react-feather'
+import { MenuToggler } from 'styles/layout'
 import {
   BrandIcon,
   BrandName,
@@ -44,12 +44,15 @@ export const Sidebar = ({
             <BrandIcon />
             <BrandName>iconly</BrandName>
           </HeaderBrand>
-          <Button
-            theme='icons'
-            type='button'
-          >
-            <Menu size={24} />
-          </Button>
+          <MenuToggler>
+            <Button
+              theme='icons'
+              type='button'
+              onClick={handleSidebarMenu}
+            >
+              <Menu size={24} />
+            </Button>
+          </MenuToggler>
         </HeaderContainer>
       </Header>
       <Navigation>
