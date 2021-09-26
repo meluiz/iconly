@@ -95,14 +95,16 @@ export const Main = ({
             <IconCard key={icon.slug}>
               <IconCardContent>
                 <IconCardInner>
-                <IconCardIcon>
-                  <Codepen size={20} />
-                </IconCardIcon>
-                <IconCardText>Codepen</IconCardText>
-              </IconCardInner>
-              <IconCardTag>Free</IconCardTag>
-            </IconCardContent>
-          </IconCard>
+                  <IconCardIcon
+                    dangerouslySetInnerHTML={{
+                      __html: icon.icon,
+                    }}
+                  />
+                  <IconCardText>{icon.name}</IconCardText>
+                </IconCardInner>
+                <IconCardTag>Free</IconCardTag>
+              </IconCardContent>
+            </IconCard>
           ))}
         </IconGrid>
       </Content>
