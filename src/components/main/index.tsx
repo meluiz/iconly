@@ -134,7 +134,7 @@ export const Main = ({
             </IconCard>
           ))}
 
-          <CardLoader ref={sentilRef} />
+          {loading && <CardLoader ref={sentilRef} />}
         </IconGrid>
       </Content>
     </Wrapper>
