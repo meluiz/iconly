@@ -1,7 +1,7 @@
 import { MouseEvent } from 'react'
 
 /* ------| Hooks |------ */
-import { CategoriesType } from 'hooks/useIcons'
+import { CategoriesType, IconsType } from 'hooks/useIcons'
 
 /* ------| Components |------ */
 import { Button } from 'components/button'
