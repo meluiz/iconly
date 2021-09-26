@@ -100,7 +100,7 @@ export const Main = ({
         if (page.current.actual > category.content.length) setLoading(false)
 
         clearTimeout(timing)
-      }, 1000)
+      }, 600)
     }
   }
 
