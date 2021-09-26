@@ -1,4 +1,6 @@
 import { MouseEvent, useEffect, useState } from 'react'
+
+/* ------| Typing |------ */
 import Categories from 'data/icons.json'
 
 /* ------| Typing |------ */
