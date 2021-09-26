@@ -1,3 +1,4 @@
+import { MouseEvent, useEffect, useState } from 'react'
 import Categories from 'data/icons.json'
 
 /* ------| Typing |------ */
@@ -37,8 +38,25 @@ export const useIcons = () => {
       }))
     }
   }, [])
-  
+
+  const handleActiveCategory = (id: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    setCategories((oldCategories) => oldCategories.map((category) => {
+      if (category.slug === id) {
+        return {
+          ...category,
+          isActived: true,
+        }
+      }
+      return {
+        ...category,
+        isActived: false,
+      }
+    }))
+  }
+
   return {
     categories,
+    handleActiveCategory,
   }
 }
