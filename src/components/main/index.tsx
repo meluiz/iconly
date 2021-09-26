@@ -95,6 +95,11 @@ export const Main = ({
         next: page.current.next + page.current.perPage,
       }
       
+      const timing = setTimeout(() => {
+        setIcons(prev => prev?.concat(data))
+
+        clearTimeout(timing)
+      }, 1000)
     }
   }
 
