@@ -1,4 +1,5 @@
 import { MouseEvent } from 'react'
+import { AnimatePresence } from 'framer-motion'
 
 /* ------| Components |------ */
 import { Button } from 'components/button'
