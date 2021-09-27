@@ -98,12 +98,18 @@ export const useIcons = () => {
     document.body.removeChild(element)
   }
 
+  const handleCopyActivatedIcon = (icon: IconsType) => (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    navigator.clipboard.writeText(icon.icon)
+  }
+
   return {
     categories,
     iconActivated,
     handleActiveCategory,
     handleActiveIcon,
     handleDownloadActivatedIcon,
+    handleCopyActivatedIcon,
     handleDeleteActivatedIcon,
   }
 }
