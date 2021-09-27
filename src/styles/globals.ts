@@ -1,8 +1,8 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 import { FontFaces } from './fonts'
 
-export const GlobalStyle = createGlobalStyle`
-  ${FontFaces}
+export const GlobalStyle = createGlobalStyle`${({ theme }) => css`
+ ${FontFaces}
 
   * {
     margin: 0;
