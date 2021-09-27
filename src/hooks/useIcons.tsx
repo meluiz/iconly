@@ -25,6 +25,7 @@ export type CategoriesType = {
 
 export const useIcons = () => {
   const [categories, setCategories] = useState<CategoriesType[]>(Categories)
+  const [iconActived, setIconActived] = useState<IconsType>()
 
   useEffect(() => {
     const actived = categories.find(icon => icon.isActived === true)
@@ -68,6 +69,8 @@ export const useIcons = () => {
 
   return {
     categories,
+    iconActived,
     handleActiveCategory,
+    handleActiveIcon,
   }
 }
