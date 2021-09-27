@@ -57,6 +57,15 @@ export const useIcons = () => {
     }))
   }
 
+  const handleActiveIcon = (parentId: string, id: string) => (event: MouseEvent<HTMLDivElement>) => {
+    event.preventDefault()
+
+    const category = categories.find(category => category.slug === parentId)
+    const actived = category?.content.find(icon => icon.slug === id)
+
+    setIconActived(actived)
+  }
+
   return {
     categories,
     handleActiveCategory,
