@@ -1,6 +1,8 @@
 /* ------| Styles |------ */
 import { Button } from 'components/button'
-import { Anchor, Download, X, Copy } from 'react-feather'
+import { Download, X, Copy } from 'react-feather'
+
+/* ------| Styles |------ */
 import {
   Box,
   BoxHeader,
