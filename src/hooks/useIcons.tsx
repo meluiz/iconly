@@ -116,6 +116,7 @@ export const useIcons = () => {
         className: 'iconly-toast iconly-toast-download',
         hideProgressBar: true,
         autoClose: 3000,
+        pauseOnHover: false,
       })
   }
 
@@ -140,6 +141,7 @@ export const useIcons = () => {
         className: 'iconly-toast iconly-toast-copy',
         hideProgressBar: true,
         autoClose: 3000,
+        pauseOnHover: false,
       })
   }
 
