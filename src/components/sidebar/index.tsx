@@ -30,7 +30,7 @@ import {
 type SidebarType = {
   categories: CategoriesType[]
   category?: CategoriesType
-  menuActived: boolean
+  menuActivated: boolean
   handleActiveCategory: (id: string) => (event: MouseEvent<HTMLAnchorElement>) => void
   handleSidebarMenu: (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLAnchorElement>) => void
 }
@@ -38,12 +38,12 @@ type SidebarType = {
 export const Sidebar = ({
   categories,
   category,
-  menuActived,
+  menuActivated,
   handleActiveCategory,
   handleSidebarMenu,
 }: SidebarType) => {
   return (
-    <Wrapper actived={menuActived}>
+    <Wrapper activated={menuActivated}>
       <Header>
         <HeaderContainer>
           <HeaderBrand>
@@ -65,7 +65,7 @@ export const Sidebar = ({
         <NavigationGroup>
           <NavigationList>
             {categories && categories.map((category) => (
-              <NavigationListItem key={category.slug} activedIcons={category.isActived}>
+              <NavigationListItem key={category.slug} activatedIcons={category.isActivated}>
                 <NavigationListLink
                   href='/'
                   onClick={(event) => {
@@ -89,7 +89,7 @@ export const Sidebar = ({
         <NavigationGroup>
           <NavigationList>
             {category && (
-              <NavigationListItem activedCategory>
+              <NavigationListItem activatedCategory>
                 <NavigationListLink href='/#'>
                   <NavigationListLinkText>All</NavigationListLinkText>
                   <NavigationListLinkCounter>{category.content.length}</NavigationListLinkCounter>

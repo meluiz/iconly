@@ -15,30 +15,30 @@ export type IconsType = {
 export type CategoriesType = {
     name: string
     slug: string
-    isActived: boolean
+    isActivated: boolean
     url: string
     icon: string
     total: number
     content: IconsType[]
 }
 
-export type IconActivedType = {
+export type IconActivatedType = {
   icon: IconsType,
   category: CategoriesType,
 }
 
 export const useIcons = () => {
   const [categories, setCategories] = useState<CategoriesType[]>(Categories)
-  const [iconActived, setIconActived] = useState<IconActivedType>()
+  const [iconActivated, setIconActivated] = useState<IconActivatedType>()
 
   useEffect(() => {
-    const actived = categories.find(icon => icon.isActived === true)
-    if (!actived) {
+    const activated = categories.find(icon => icon.isActivated === true)
+    if (!activated) {
       setCategories((oldCategories) => oldCategories.map(icon => {
         if (icon.slug === 'feathericons') {
           return {
             ...icon,
-            isActived: true,
+            isActivated: true,
           }
         }
         return icon
@@ -52,12 +52,12 @@ export const useIcons = () => {
       if (category.slug === id) {
         return {
           ...category,
-          isActived: true,
+          isActivated: true,
         }
       }
       return {
         ...category,
-        isActived: false,
+        isActivated: false,
       }
     }))
   }
@@ -66,28 +66,28 @@ export const useIcons = () => {
     event.preventDefault()
 
     const category = categories.find(category => category.slug === parentId)
-    const actived = category?.content.find(icon => icon.slug === id)
+    const activated = category?.content.find(icon => icon.slug === id)
 
-    if (category && actived) {
-      return setIconActived({
-        icon: actived,
+    if (category && activated) {
+      return setIconActivated({
+        icon: activated,
         category: category,
       })
     }
 
-    return setIconActived(undefined)
+    return setIconActivated(undefined)
   }
 
-  const handleDeleteActivedIcon = (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLDivElement>) => {
+  const handleDeleteActivatedIcon = (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
-    setIconActived(undefined)
+    setIconActivated(undefined)
   }
 
   return {
     categories,
-    iconActived,
+    iconActivated,
     handleActiveCategory,
     handleActiveIcon,
-    handleDeleteActivedIcon,
+    handleDeleteActivatedIcon,
   }
 }

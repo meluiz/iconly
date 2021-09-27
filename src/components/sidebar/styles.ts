@@ -2,15 +2,15 @@ import styled, { css, DefaultTheme } from 'styled-components'
 
 type WrapperType = {
   theme: DefaultTheme
-  actived: boolean
+  activated: boolean
 }
 
 type NavigationListItemType = {
-  activedIcons?: boolean
-  activedCategory?: boolean
+  activatedIcons?: boolean
+  activatedCategory?: boolean
 }
 
-export const Wrapper = styled.aside`${({ theme, actived }: WrapperType) => css`
+export const Wrapper = styled.aside`${({ theme, activated }: WrapperType) => css`
   width: 100%;
   height: 100vh;
   display: flex;
@@ -22,7 +22,7 @@ export const Wrapper = styled.aside`${({ theme, actived }: WrapperType) => css`
   transition: all 300ms ease;
   transform: translate3D(-100%, 0, 0);
 
-  ${actived && css`
+  ${activated && css`
     transform: translate3D(0, 0, 0);
   `}
   
@@ -108,11 +108,11 @@ export const NavigationList = styled.ul`
   gap: 4px;
 `
 
-export const NavigationListItem = styled.li<NavigationListItemType>`${({ theme, activedIcons, activedCategory }) => css`
+export const NavigationListItem = styled.li<NavigationListItemType>`${({ theme, activatedIcons, activatedCategory }) => css`
   min-height: 0;
   position: relative;
 
-  ${activedIcons && css`
+  ${activatedIcons && css`
     ${NavigationListLink} {
       opacity: 1;
       background: linear-gradient(90deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 95%);
@@ -124,7 +124,7 @@ export const NavigationListItem = styled.li<NavigationListItemType>`${({ theme, 
     }
   `}
 
-  ${activedCategory && css`
+  ${activatedCategory && css`
     ${NavigationListLink} {
       opacity: 1;
     }

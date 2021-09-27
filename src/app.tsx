@@ -12,36 +12,36 @@ import { Sidebar } from 'components/sidebar'
 import { Container, Wrapper } from 'styles/layout'
 
 export function App () {
-  const [menuActived, setMenuActived] = useState<boolean>(false)
+  const [menuActivated, setMenuActivated] = useState<boolean>(false)
   const {
     categories,
-    iconActived,
+    iconActivated,
     handleActiveCategory,
     handleActiveIcon,
-    handleDeleteActivedIcon,
+    handleDeleteActivatedIcon,
   } = useIcons()
 
   const handleSidebarMenu = (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
-    setMenuActived(actived => !actived)
+    setMenuActivated(Activated => !Activated)
   }
 
   return (
     <Wrapper>
       <IconSingle
-        iconActived={iconActived}
-        handleDeleteActivedIcon={handleDeleteActivedIcon}
+        iconActivated={iconActivated}
+        handleDeleteActivatedIcon={handleDeleteActivatedIcon}
       />
       <Container>
         <Sidebar
-          menuActived={menuActived}
+          menuActivated={menuActivated}
           categories={categories}
-          category={categories.find(category => category.isActived === true)}
+          category={categories.find(category => category.isActivated === true)}
           handleActiveCategory={handleActiveCategory}
           handleSidebarMenu={handleSidebarMenu}
         />
         <Main
-          category={categories.find(category => category.isActived === true)}
+          category={categories.find(category => category.isActivated === true)}
           handleSidebarMenu={handleSidebarMenu}
           handleActiveIcon={handleActiveIcon}
         />

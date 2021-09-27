@@ -29,24 +29,24 @@ import {
 } from './styles'
 
 /* ------| Types |------ */
-import { IconActivedType } from 'hooks/useIcons'
+import { IconActivatedType } from 'hooks/useIcons'
 type IconSingleType = {
-  iconActived?: IconActivedType
-  handleDeleteActivedIcon: (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLDivElement>) => void
+  iconActivated?: IconActivatedType
+  handleDeleteActivatedIcon: (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLDivElement>) => void
 }
 
 export const IconSingle = ({
-  iconActived,
-  handleDeleteActivedIcon,
+  iconActivated,
+  handleDeleteActivatedIcon,
 }: IconSingleType) => {
   const handleStopPropagation = (event: MouseEvent<HTMLDivElement>) => event.stopPropagation()
 
   return (
     <AnimatePresence>
-      {iconActived && (
+      {iconActivated && (
         <Wrapper>
           <Container
-            onClick={handleDeleteActivedIcon}
+            onClick={handleDeleteActivatedIcon}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -65,7 +65,7 @@ export const IconSingle = ({
                 <Button
                   theme='icons'
                   type='button'
-                  onClick={handleDeleteActivedIcon}
+                  onClick={handleDeleteActivatedIcon}
                 >
                   <X size={20} />
                 </Button>
@@ -77,77 +77,77 @@ export const IconSingle = ({
                       size='sm'
                       opactiy={0.3}
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewArt
                       size='md'
                       opactiy={0.5}
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewArt
                       size='base'
                       opactiy={1}
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewArt
                       size='md'
                       opactiy={0.5}
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewArt
                       size='sm'
                       opactiy={0.3}
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                   </IconPreviewExposure>
                   <IconPreviewSamples>
                     <IconPreviewSamplesItem
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewSamplesItem
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewSamplesItem
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewSamplesItem
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewSamplesItem
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewSamplesItem
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewSamplesItem
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                     <IconPreviewSamplesItem
                       dangerouslySetInnerHTML={{
-                        __html: iconActived.icon.icon,
+                        __html: iconActivated.icon.icon,
                       }}
                     />
                   </IconPreviewSamples>
@@ -174,7 +174,7 @@ export const IconSingle = ({
                   <IconInfoItemTitleBox>
                     <IconInfoItemTitle>Category</IconInfoItemTitle>
                   </IconInfoItemTitleBox>
-                  <IconInfoItemText>{iconActived.category.name}</IconInfoItemText>
+                  <IconInfoItemText>{iconActivated.category.name}</IconInfoItemText>
                 </IconInfoItem>
               </IconInfo>
             </Box>
