@@ -1,4 +1,5 @@
 import { MouseEvent, useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 
 /* ------| Typing |------ */
 import Categories from 'data/icons.json'
