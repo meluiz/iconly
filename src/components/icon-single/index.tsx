@@ -1,4 +1,6 @@
-/* ------| Styles |------ */
+import { MouseEvent } from 'react'
+
+/* ------| Components |------ */
 import { Button } from 'components/button'
 import { Download, X, Copy } from 'react-feather'
 
@@ -25,7 +27,18 @@ import {
   Wrapper,
 } from './styles'
 
-export const IconSingle = () => {
+/* ------| Types |------ */
+import { IconActivedType } from 'hooks/useIcons'
+type IconSingleType = {
+  iconActived?: IconActivedType
+  handleDeleteActivedIcon: (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLDivElement>) => void
+}
+
+export const IconSingle = ({
+  iconActived,
+  handleDeleteActivedIcon,
+}: IconSingleType) => {
+
   return (
     <AnimatePresence>
       {iconActived && (
