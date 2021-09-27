@@ -78,10 +78,16 @@ export const useIcons = () => {
     return setIconActived(undefined)
   }
 
+  const handleDeleteActivedIcon = (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    setIconActived(undefined)
+  }
+
   return {
     categories,
     iconActived,
     handleActiveCategory,
     handleActiveIcon,
+    handleDeleteActivedIcon,
   }
 }
