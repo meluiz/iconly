@@ -1,8 +1,8 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 import { FontFaces } from './fonts'
 
-export const GlobalStyle = createGlobalStyle`
-  ${FontFaces}
+export const GlobalStyle = createGlobalStyle`${({ theme }) => css`
+ ${FontFaces}
 
   * {
     margin: 0;
@@ -240,4 +240,30 @@ export const GlobalStyle = createGlobalStyle`
   textarea {
     resize: vertical;
   }
-`
+
+  .iconly-toast {
+    flex: 0;
+    margin: 8px auto;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    padding: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Circular', Arial, Helvetica, sans-serif;
+    background-color: ${theme.colors.background.primary};
+    background-image: linear-gradient(
+      ${theme.colors.background.primary},
+      ${theme.colors.background.primary}),
+      linear-gradient(
+        90deg,
+        ${theme.colors.primary} 0%,
+        ${theme.colors.secondary} 95%
+      );
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+    &-copy { max-width: 144px }
+    &-download { max-width: 192px }
+  }
+`}`

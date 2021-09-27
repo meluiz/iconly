@@ -29,14 +29,18 @@ import {
 } from './styles'
 
 /* ------| Types |------ */
-import { IconActivatedType } from 'hooks/useIcons'
+import { IconActivatedType, IconsType } from 'hooks/useIcons'
 type IconSingleType = {
   iconActivated?: IconActivatedType
+  handleDownloadActivatedIcon: (icon: IconsType) => (event: MouseEvent<HTMLButtonElement>) => void
+  handleCopyActivatedIcon: (icon: IconsType) => (event: MouseEvent<HTMLButtonElement>) => void
   handleDeleteActivatedIcon: (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLDivElement>) => void
 }
 
 export const IconSingle = ({
   iconActivated,
+  handleDownloadActivatedIcon,
+  handleCopyActivatedIcon,
   handleDeleteActivatedIcon,
 }: IconSingleType) => {
   const handleStopPropagation = (event: MouseEvent<HTMLDivElement>) => event.stopPropagation()
@@ -50,6 +54,11 @@ export const IconSingle = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{
+              opacity: {
+                duration: 0.150,
+              },
+            }}
           >
             <Box
               onClick={handleStopPropagation}
@@ -157,6 +166,7 @@ export const IconSingle = ({
                     theme='text'
                     type='button'
                     icon={<Download />}
+                    onClick={handleDownloadActivatedIcon(iconActivated.icon)}
                   >
                     Download
                   </Button>
@@ -164,6 +174,7 @@ export const IconSingle = ({
                     theme='text'
                     type='button'
                     icon={<Copy />}
+                    onClick={handleCopyActivatedIcon(iconActivated.icon)}
                   >
                     Copy
                   </Button>

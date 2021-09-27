@@ -73,7 +73,6 @@ Builds the app for production to the `build` folder.
 
 - Optimize search effect
 - Create a hook or component to InfiniteLoader
-- Create functions to download and copy svg
 - Separe icons by subcategory
 - Create tag system
 
