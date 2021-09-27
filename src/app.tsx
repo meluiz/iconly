@@ -17,6 +17,7 @@ export function App () {
     categories,
     iconActived,
     handleActiveCategory,
+    handleActiveIcon,
   } = useIcons()
 
   const handleSidebarMenu = (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLAnchorElement>) => {
@@ -38,6 +39,7 @@ export function App () {
         <Main
           category={categories.find(category => category.isActived === true)}
           handleSidebarMenu={handleSidebarMenu}
+          handleActiveIcon={handleActiveIcon}
         />
       </Container>
     </Wrapper>
