@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { motion } from 'framer-motion'
 
 type IconPreviewType = {
   size: 'base' | 'md' | 'sm'
@@ -15,7 +16,7 @@ export const Wrapper = styled.div`
   z-index: 20;
   `
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: flex;
@@ -26,7 +27,7 @@ export const Container = styled.div`
   transition: all 300ms ease;
 `
 
-export const Box = styled.div`${({ theme }) => css`
+export const Box = styled(motion.div)`${({ theme }) => css`
   width: 100%;
   max-width: 512px;
   height: 100%;
@@ -102,18 +103,33 @@ export const IconPreviewArt = styled.div<IconPreviewType>`
 
   ${({ size }) => css`
     ${size === 'sm' && css`
-      width: 24px;
-      height: 24px;
+      width: 18px;
+      height: 18px;
+
+      @media screen and (min-width: 640px) {
+        width: 24px;
+        height: 24px;
+      }
     `}
 
     ${size === 'md' && css`
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
+
+      @media screen and (min-width: 640px) {
+        width: 40px;
+        height: 40px;
+      }
     `}
 
     ${size === 'base' && css`
-      width: 72px;
-      height: 72px;
+      width: 56px;
+      height: 56px;
+
+      @media screen and (min-width: 640px) {
+        width: 72px;
+        height: 72px;
+      }
     `}
   `}
 
@@ -128,8 +144,14 @@ export const IconPreviewSamples = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)
                          minmax(0, 1fr) minmax(0, 1fr)
+                         minmax(0, 1fr);
+  
+  @media screen and (min-width: 640px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)
+                         minmax(0, 1fr) minmax(0, 1fr)
                          minmax(0, 1fr) minmax(0, 1fr)
                          minmax(0, 1fr) minmax(0, 1fr);
+  }
 `
 
 export const IconPreviewSamplesItem = styled.div`
@@ -143,18 +165,45 @@ export const IconPreviewSamplesItem = styled.div`
   &:nth-child(3) { background-color: #FFC233 }
   &:nth-child(4) { background-color: #2DCA72 }
   &:nth-child(5) { background-color: #00ACFF }
-  &:nth-child(6) { background-color: #EB459E }
-  &:nth-child(7) { background-color: #F75FDE }
+  &:nth-child(6) {
+    display: none;
+    background-color: #EB459E;
+
+    @media screen and (min-width: 640px) {
+      display: flex;
+    }
+  }
+
+  &:nth-child(7) {
+    display: none;
+    background-color: #F75FDE;
+
+    @media screen and (min-width: 640px) {
+      display: flex;
+    }
+  }
+
   &:nth-child(8) {
     color: black;
+    display: none;
     background-color: white;
+
+    @media screen and (min-width: 640px) {
+      display: flex;
+    }
   }
 `
 
 export const IconPreviewActions = styled.div`
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+  @media screen and (min-width: 420px) {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
 `
 
 export const IconInfo = styled.div`
