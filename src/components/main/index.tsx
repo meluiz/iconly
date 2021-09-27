@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useRef, useState } from 'react'
+import { ChangeEvent, MouseEvent, useEffect, useRef, useState } from 'react'
 
 /* ------| Hooks |------ */
 import { CategoriesType, IconsType } from 'hooks/useIcons'
@@ -50,6 +50,7 @@ export const Main = ({
   handleSidebarMenu,
   handleActiveIcon,
 }: MainType) => {
+  const [inputSearch, setInputSearch] = useState('')
   const [icons, setIcons] = useState<IconsType[]>()
   const [loading, setLoading] = useState(true)
   const sentilRef = useRef<HTMLDivElement>(null)
@@ -136,7 +137,11 @@ export const Main = ({
               <Search size={20} />
             </Button>
             <FormInput
+              value={inputSearch}
               placeholder='Search for an icon'
+              onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                setInputSearch(event.target.value)
+              }}
             />
           </FormContent>
         </Form>
