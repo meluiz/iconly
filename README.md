@@ -27,7 +27,7 @@
   <a href="https://iconly.meluiz.com/"><strong>Browse at iconly.meluiz.com &rarr;</strong></a>
 </p>
 
-# Getting started
+## Getting started
 
 ### Clone this repository
 
@@ -49,7 +49,7 @@ npm install
 yarn
 ```
 
-# Usage
+## Usage
 
 ```bash
 npm run dev
@@ -59,7 +59,7 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-# Build
+## Build
 
 ```bash
 npm run build
