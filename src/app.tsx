@@ -18,6 +18,7 @@ export function App () {
     iconActived,
     handleActiveCategory,
     handleActiveIcon,
+    handleDeleteActivedIcon,
   } = useIcons()
 
   const handleSidebarMenu = (event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLAnchorElement>) => {
@@ -27,7 +28,10 @@ export function App () {
 
   return (
     <Wrapper>
-      <IconSingle iconActived={iconActived} />
+      <IconSingle
+        iconActived={iconActived}
+        handleDeleteActivedIcon={handleDeleteActivedIcon}
+      />
       <Container>
         <Sidebar
           menuActived={menuActived}
