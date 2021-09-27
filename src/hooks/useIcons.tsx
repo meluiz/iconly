@@ -97,6 +97,26 @@ export const useIcons = () => {
     document.body.appendChild(element)
     element.click()
     document.body.removeChild(element)
+
+    toast(
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '4px',
+      }}
+      >
+        <svg width='24' height='24' fill='none' viewBox='0 0 24 24'>
+          <path stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M5.75 12.8665L8.33995 16.4138C9.15171 17.5256 10.8179 17.504 11.6006 16.3715L18.25 6.75' />
+        </svg>  SVG Downloaded
+      </div>
+      , {
+        position: 'bottom-center',
+        closeButton: false,
+        className: 'iconly-toast iconly-toast-download',
+        hideProgressBar: true,
+        autoClose: 3000,
+      })
   }
 
   const handleCopyActivatedIcon = (icon: IconsType) => (event: MouseEvent<HTMLButtonElement>) => {
