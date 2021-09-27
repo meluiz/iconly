@@ -184,7 +184,30 @@ export const Main = ({
       </Header>
       <Content ref={contentRef}>
         <IconGrid>
-          {icons && icons.map((icon) => (
+          {inputSearch.length > 0 &&
+            category &&
+            category.content.filter(
+              icon => icon.slug.includes(inputSearch),
+            ).map((icon) => (
+              <IconCard
+                role='button'
+                key={icon.slug}
+                onClick={handleActiveIcon(icon.slugParent, icon.slug)}
+              >
+                <IconCardContent>
+                  <IconCardInner>
+                    <IconCardIcon
+                      dangerouslySetInnerHTML={{
+                        __html: icon.icon,
+                      }}
+                    />
+                    <IconCardText>{icon.slug}</IconCardText>
+                  </IconCardInner>
+                  <IconCardTag>Free</IconCardTag>
+                </IconCardContent>
+              </IconCard>
+            ))}
+          {inputSearch.length === 0 && icons && icons.map((icon) => (
             <IconCard
               role='button'
               key={icon.slug}
@@ -204,7 +227,7 @@ export const Main = ({
             </IconCard>
           ))}
 
-          {loading && <CardLoader ref={sentilRef} />}
+          {inputSearch.length === 0 && loading && <CardLoader ref={sentilRef} />}
         </IconGrid>
       </Content>
     </Wrapper>
