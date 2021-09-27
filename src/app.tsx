@@ -4,11 +4,13 @@ import { MouseEvent, useState } from 'react'
 import { useIcons } from 'hooks/useIcons'
 
 /* ------| Components |------ */
+import { ToastContainer } from 'react-toastify'
 import { IconSingle } from 'components/icon-single'
 import { Main } from 'components/main'
 import { Sidebar } from 'components/sidebar'
 
 /* ------| Styles |------ */
+import 'react-toastify/dist/ReactToastify.css'
 import { Container, Wrapper } from 'styles/layout'
 
 export function App () {
@@ -50,6 +52,7 @@ export function App () {
           handleActiveIcon={handleActiveIcon}
         />
       </Container>
+      <ToastContainer />
     </Wrapper>
   )
 }
