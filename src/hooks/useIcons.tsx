@@ -83,11 +83,28 @@ export const useIcons = () => {
     setIconActivated(undefined)
   }
 
+  const handleDownloadActivatedIcon = (icon: IconsType) => (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+
+    const element = document.createElement('a')
+    const file = new Blob([icon.icon], { type: 'text/svg' })
+
+    element.href = URL.createObjectURL(file)
+    element.setAttribute('target', '_blank')
+    element.download = `${icon.slugParent}-${icon.slug}.svg`
+
+    document.body.appendChild(element)
+    element.click()
+    document.body.removeChild(element)
+  }
+
   return {
     categories,
     iconActivated,
     handleActiveCategory,
     handleActiveIcon,
+    handleDownloadActivatedIcon,
     handleDeleteActivatedIcon,
   }
 }
+    handleDownloadActivatedIcon,
