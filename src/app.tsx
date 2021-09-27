@@ -15,6 +15,7 @@ export function App () {
   const [menuActived, setMenuActived] = useState<boolean>(false)
   const {
     categories,
+    iconActived,
     handleActiveCategory,
   } = useIcons()
 
@@ -25,7 +26,7 @@ export function App () {
 
   return (
     <Wrapper>
-      <IconSingle />
+      <IconSingle iconActived={iconActived} />
       <Container>
         <Sidebar
           menuActived={menuActived}
