@@ -27,6 +27,8 @@ import {
 
 export const IconSingle = () => {
   return (
+    <AnimatePresence>
+      {iconActived && (
         <Wrapper>
           <Container
             onClick={handleDeleteActivedIcon}
@@ -163,5 +165,7 @@ export const IconSingle = () => {
             </Box>
           </Container>
         </Wrapper>
+      )}
+    </AnimatePresence>
   )
 }
