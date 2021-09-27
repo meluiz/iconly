@@ -7,7 +7,6 @@ import Categories from 'data/icons.json'
 export type IconsType = {
   name: string
   icon: string
-  isActived: boolean
   slug: string
   tag: null
   slugParent: string
