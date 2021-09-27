@@ -15,6 +15,7 @@ export const Header = styled.header`
   height: 72px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
   padding-left: 28px;
   padding-right: 28px;
@@ -23,11 +24,17 @@ export const Header = styled.header`
   flex-grow: 0;
   flex-shrink: 0;
   border-bottom: 1px solid rgba(255,255,255,.08);
+
 `
 
 export const Form = styled.form`
   height: 40px;
   flex-grow: 1;
+  display: none;
+
+  @media screen and (min-width: 640px) {
+    display: block;
+  }
 `
 
 export const FormContent = styled.div`${({ theme }) => css`
@@ -114,6 +121,7 @@ export const SocialListLink = styled.a`
 export const SocialListLinkAlt = styled(SocialListLink)`${({ theme }) => css`
   width: auto;
   height: 48px;
+  display: none;
   font-weight: 600;
   border: 2px solid transparent;
   margin-left: 8px;
@@ -130,6 +138,10 @@ export const SocialListLinkAlt = styled(SocialListLink)`${({ theme }) => css`
       );
     background-origin: border-box;
     background-clip: content-box, border-box;
+  }
+
+  @media screen and (min-width: 640px) {
+    display: flex;
   }
 `}`
 
