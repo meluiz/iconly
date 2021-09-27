@@ -42,11 +42,13 @@ import {
 type MainType = {
   category?: CategoriesType
   handleSidebarMenu: (event: MouseEvent<HTMLButtonElement>) => void
+  handleActiveIcon: (parentId: string, id: string) => (event: MouseEvent<HTMLDivElement>) => void
 }
 
 export const Main = ({
   category,
   handleSidebarMenu,
+  handleActiveIcon,
 }: MainType) => {
   const [icons, setIcons] = useState<IconsType[]>()
   const [loading, setLoading] = useState(true)
@@ -178,7 +180,11 @@ export const Main = ({
       <Content ref={contentRef}>
         <IconGrid>
           {icons && icons.map((icon) => (
-            <IconCard role='button' key={icon.slug}>
+            <IconCard
+              role='button'
+              key={icon.slug}
+              onClick={handleActiveIcon(icon.slugParent, icon.slug)}
+            >
               <IconCardContent>
                 <IconCardInner>
                   <IconCardIcon
