@@ -32,7 +32,7 @@
 ### Clone this repository
 
 ```bash
-git clone https://github.com/meluiz/Iconly.git
+git clone https://github.com/meluiz/iconly.git
 ```
 
 ### Move yourself to the appropriate repository
