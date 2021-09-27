@@ -54,6 +54,11 @@ export const IconSingle = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{
+              opacity: {
+                duration: 0.150,
+              },
+            }}
           >
             <Box
               onClick={handleStopPropagation}
