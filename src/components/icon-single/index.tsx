@@ -39,6 +39,7 @@ export const IconSingle = ({
   iconActived,
   handleDeleteActivedIcon,
 }: IconSingleType) => {
+  const handleStopPropagation = (event: MouseEvent<HTMLDivElement>) => event.stopPropagation()
 
   return (
     <AnimatePresence>
