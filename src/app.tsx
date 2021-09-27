@@ -18,6 +18,7 @@ export function App () {
     iconActivated,
     handleActiveCategory,
     handleActiveIcon,
+    handleDownloadActivatedIcon,
     handleDeleteActivatedIcon,
   } = useIcons()
 
@@ -30,6 +31,7 @@ export function App () {
     <Wrapper>
       <IconSingle
         iconActivated={iconActivated}
+        handleDownloadActivatedIcon={handleDownloadActivatedIcon}
         handleDeleteActivatedIcon={handleDeleteActivatedIcon}
       />
       <Container>
