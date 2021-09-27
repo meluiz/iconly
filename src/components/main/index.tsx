@@ -149,7 +149,7 @@ export const Main = ({
           <SocialList>
             <SocialListItem>
               <SocialListLink
-                href='https://github.com/meluiz'
+                href='https://github.com/meluiz/Iconly'
                 target='_blank'
               >
                 <GitHub size={20} />
