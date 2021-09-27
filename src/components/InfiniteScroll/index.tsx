@@ -1,8 +1,8 @@
 /* ------| Styles |------ */
-import {} from './styles'
+import { Wrapper } from './styles'
 
 export const InfiniteScroll = () => {
   return (
-    <div>Hello, World</div>
+    <Wrapper>Hello, World</Wrapper>
   )
 }
