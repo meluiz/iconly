@@ -71,6 +71,7 @@ Builds the app for production to the `build` folder.
 
 ### Todo
 
+- Show something when search icons is empty
 - Separe icons by subcategory
 - Create tag system
 
