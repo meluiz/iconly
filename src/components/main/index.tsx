@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useEffect, useRef, useState } from 'react'
+import { ChangeEvent, MouseEvent, useEffect, useState } from 'react'
 
 /* ------| Hooks |------ */
 import { CategoriesType, IconsType } from 'hooks/useIcons'
