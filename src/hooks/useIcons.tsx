@@ -9,7 +9,7 @@ export type IconsType = {
   name: string
   icon: string
   slug: string
-  tag: null
+  tag: string
   slugParent: string
 }
 
