@@ -62,9 +62,7 @@ export const Main = ({
     }
   }
 
-  useEffect(() => {
-    setInputSearch('')
-  }, [category])
+  useEffect(() => { setInputSearch('') }, [category])
 
   return (
     <Wrapper>
