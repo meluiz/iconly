@@ -71,8 +71,7 @@ Builds the app for production to the `build` folder.
 
 ### Todo
 
-- Optimize search effect
-- Create a hook or component to InfiniteLoader
+- Show something when search icons is empty
 - Separe icons by subcategory
 - Create tag system
 

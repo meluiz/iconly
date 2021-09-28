@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useEffect, useRef, useState } from 'react'
+import { ChangeEvent, MouseEvent, useEffect, useState, useRef } from 'react'
 
 /* ------| Hooks |------ */
 import { CategoriesType, IconsType } from 'hooks/useIcons'
@@ -29,6 +29,7 @@ import {
   IconCardTag,
   IconCardText,
   IconGrid,
+  IconGridInfinitScroll,
   Social,
   SocialList,
   SocialListItem,
@@ -51,70 +52,18 @@ export const Main = ({
   handleActiveIcon,
 }: MainType) => {
   const [inputSearch, setInputSearch] = useState('')
-  const [icons, setIcons] = useState<IconsType[]>()
-  const [loading, setLoading] = useState(true)
-  const sentilRef = useRef<HTMLDivElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
-  const page = useRef({
-    actual: 0,
-    next: 36,
-    perPage: 36,
-  })
+  const [filteredIcons, setFilteredIcons] = useState<IconsType[] | undefined>()
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    setLoading(true)
-    page.current = {
-      actual: 0,
-      next: 36,
-      perPage: 36,
-    }
-
-    if (contentRef.current) contentRef.current.scroll(0, 0)
+  const handleInputSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    setInputSearch(event.target.value)
     if (category) {
-      const data = [...category.content].slice(
-        page.current.actual,
-        page.current.next,
-      )
-
-      setIcons(data)
-      page.current = {
-        ...page.current,
-        actual: page.current.next + 1,
-        next: page.current.next + page.current.perPage,
-      }
-    }
-  }, [category])
-
-  const handleScroll = () => {
-    if (category) {
-      const data = [...category.content].slice(
-        page.current.actual,
-        page.current.next,
-      )
-
-      page.current = {
-        ...page.current,
-        actual: page.current.next + 1,
-        next: page.current.next + page.current.perPage,
-      }
-
-      const timing = setTimeout(() => {
-        setIcons(prev => prev?.concat(data))
-        if (page.current.actual > category.content.length) setLoading(false)
-
-        clearTimeout(timing)
-      }, 600)
+      const filtered = category.content.filter(icon => icon.slug.includes(inputSearch))
+      setFilteredIcons(filtered)
     }
   }
 
-  useEffect(() => {
-    const intersection = new IntersectionObserver((entries) => {
-      if (entries.some(entry => entry.isIntersecting)) handleScroll()
-    })
-
-    if (sentilRef.current) intersection.observe(sentilRef.current)
-    return () => intersection.disconnect()
-  })
+  useEffect(() => { setInputSearch('') }, [category])
 
   return (
     <Wrapper>
@@ -139,9 +88,7 @@ export const Main = ({
             <FormInput
               value={inputSearch}
               placeholder='Search for an icon'
-              onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                setInputSearch(event.target.value)
-              }}
+              onChange={handleInputSearch}
             />
           </FormContent>
         </Form>
@@ -182,52 +129,74 @@ export const Main = ({
           </SocialList>
         </Social>
       </Header>
-      <Content ref={contentRef}>
+      <Content ref={containerRef}>
         <IconGrid>
-          {inputSearch.length > 0 &&
-            category &&
-            category.content.filter(
-              icon => icon.slug.includes(inputSearch),
-            ).map((icon) => (
-              <IconCard
-                role='button'
-                key={icon.slug}
-                onClick={handleActiveIcon(icon.slugParent, icon.slug)}
-              >
-                <IconCardContent>
-                  <IconCardInner>
-                    <IconCardIcon
-                      dangerouslySetInnerHTML={{
-                        __html: icon.icon,
-                      }}
-                    />
-                    <IconCardText>{icon.slug}</IconCardText>
-                  </IconCardInner>
-                  <IconCardTag>Free</IconCardTag>
-                </IconCardContent>
-              </IconCard>
-            ))}
-          {inputSearch.length === 0 && icons && icons.map((icon) => (
-            <IconCard
-              role='button'
-              key={icon.slug}
-              onClick={handleActiveIcon(icon.slugParent, icon.slug)}
+          {inputSearch.length === 0 && category && (
+            <IconGridInfinitScroll
+              settings={{
+                actual: 0,
+                next: 36,
+                perPage: 36,
+                delay: 600,
+              }}
+              data={category.content}
+              Sentil={CardLoader}
+              parentRef={containerRef}
             >
-              <IconCardContent>
-                <IconCardInner>
-                  <IconCardIcon
-                    dangerouslySetInnerHTML={{
-                      __html: icon.icon,
-                    }}
-                  />
-                  <IconCardText>{icon.slug}</IconCardText>
-                </IconCardInner>
-                <IconCardTag>Free</IconCardTag>
-              </IconCardContent>
-            </IconCard>
-          ))}
+              {(items) => items.map((icon) => (
+                <IconCard
+                  role='button'
+                  key={icon.slug}
+                  onClick={handleActiveIcon(icon.slugParent, icon.slug)}
+                >
+                  <IconCardContent>
+                    <IconCardInner>
+                      <IconCardIcon
+                        dangerouslySetInnerHTML={{
+                          __html: `${icon.icon}`,
+                        }}
+                      />
+                      <IconCardText>{icon.slug}</IconCardText>
+                    </IconCardInner>
+                    <IconCardTag>Free</IconCardTag>
+                  </IconCardContent>
+                </IconCard>
+              ))}
+            </IconGridInfinitScroll>
+          )}
 
-          {inputSearch.length === 0 && loading && <CardLoader ref={sentilRef} />}
+          {inputSearch.length > 0 && filteredIcons && (
+            <IconGridInfinitScroll
+              settings={{
+                actual: 0,
+                next: 36,
+                perPage: 36,
+                delay: 600,
+              }}
+              data={filteredIcons}
+              Sentil={CardLoader}
+            >
+              {(items) => items.map((icon) => (
+                <IconCard
+                  role='button'
+                  key={icon.slug}
+                  onClick={handleActiveIcon(icon.slugParent, icon.slug)}
+                >
+                  <IconCardContent>
+                    <IconCardInner>
+                      <IconCardIcon
+                        dangerouslySetInnerHTML={{
+                          __html: `${icon.icon}`,
+                        }}
+                      />
+                      <IconCardText>{icon.slug}</IconCardText>
+                    </IconCardInner>
+                    <IconCardTag>Free</IconCardTag>
+                  </IconCardContent>
+                </IconCard>
+              ))}
+            </IconGridInfinitScroll>
+          )}
         </IconGrid>
       </Content>
     </Wrapper>
