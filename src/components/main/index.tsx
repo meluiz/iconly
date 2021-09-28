@@ -61,15 +61,8 @@ export const Main = ({
     perPage: 36,
   })
 
-  useEffect(() => {
-    setLoading(true)
-    page.current = {
-      actual: 0,
-      next: 36,
-      perPage: 36,
-    }
-
-    if (contentRef.current) contentRef.current.scroll(0, 0)
+  const handleInputSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    setInputSearch(event.target.value)
     if (category) {
       const data = [...category.content].slice(
         page.current.actual,
@@ -96,7 +89,7 @@ export const Main = ({
         ...page.current,
         actual: page.current.next + 1,
         next: page.current.next + page.current.perPage,
-      }
+  }
 
       const timing = setTimeout(() => {
         setIcons(prev => prev?.concat(data))
@@ -139,9 +132,7 @@ export const Main = ({
             <FormInput
               value={inputSearch}
               placeholder='Search for an icon'
-              onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                setInputSearch(event.target.value)
-              }}
+              onChange={handleInputSearch}
             />
           </FormContent>
         </Form>
