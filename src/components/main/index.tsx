@@ -51,15 +51,7 @@ export const Main = ({
   handleActiveIcon,
 }: MainType) => {
   const [inputSearch, setInputSearch] = useState('')
-  const [icons, setIcons] = useState<IconsType[]>()
-  const [loading, setLoading] = useState(true)
-  const sentilRef = useRef<HTMLDivElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
-  const page = useRef({
-    actual: 0,
-    next: 36,
-    perPage: 36,
-  })
+  const [filteredIcons, setFilteredIcons] = useState<IconsType[] | undefined>()
 
   const handleInputSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setInputSearch(event.target.value)
