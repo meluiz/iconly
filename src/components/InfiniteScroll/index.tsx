@@ -48,7 +48,7 @@ export const InfiniteScroll = ({
         next: page.current.next + page.current.perPage,
       }
     }
-  }, [data, settings])
+  }, [data, settings, parentRef])
 
   const handleScroll = () => {
     if (data) {
