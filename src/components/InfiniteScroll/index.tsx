@@ -11,18 +11,18 @@ type InfiniteScrollSettingsType = {
 
 type InfiniteScrollType = {
   settings: InfiniteScrollSettingsType
-  Sentil: StyledComponent<'div', DefaultTheme, {}, never>
-  children: (item: Array<Record<string, string>>) => ReactNode
   data?: Array<Record<string, string>>
+  Sentil: StyledComponent<'div', DefaultTheme, {}, never>
   parentRef?: RefObject<HTMLDivElement>
+  children: (item: Array<Record<string, string>>) => ReactNode
 }
 
 export const InfiniteScroll = ({
   settings,
-  Sentil,
-  children,
   data,
+  Sentil,
   parentRef,
+  children,
 }: InfiniteScrollType) => {
   const [items, setItems] = useState<Array<Record<string, string>>>([])
   const [hasMore, setHasMore] = useState(true)
