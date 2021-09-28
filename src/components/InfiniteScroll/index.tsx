@@ -1,5 +1,4 @@
 import { ReactNode, useEffect, useRef, useState, RefObject } from 'react'
-import { DefaultTheme, StyledComponent } from 'styled-components'
 
 /* ------| Types |------ */
 type InfiniteScrollSettingsType = {
