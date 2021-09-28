@@ -68,7 +68,7 @@ export const IconSingle = ({
             >
               <BoxHeader>
                 <BoxIcon>
-                  <BoxIconName>Anchor</BoxIconName>
+                  <BoxIconName>{iconActivated.icon.name}</BoxIconName>
                   <BoxIconBadge>Free</BoxIconBadge>
                 </BoxIcon>
                 <Button
