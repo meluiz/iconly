@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { InfiniteScroll } from 'components/InfiniteScroll'
 
 export const Wrapper = styled.main`${({ theme }) => css`
   grid-area: content;
@@ -162,6 +163,25 @@ export const Content = styled.section`
 `
 
 export const IconGrid = styled.div`
+  display: grid;
+  padding: 24px 32px;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1fr);
+
+  @media screen and (min-width: 640px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+`
+
+export const IconGridInfinitScroll = styled(InfiniteScroll)`
   display: grid;
   padding: 24px 32px;
   gap: 8px;
