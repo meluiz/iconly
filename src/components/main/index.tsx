@@ -29,6 +29,7 @@ import {
   IconCardTag,
   IconCardText,
   IconGrid,
+  IconGridInfinitScroll,
   Social,
   SocialList,
   SocialListItem,
@@ -129,52 +130,73 @@ export const Main = ({
           </SocialList>
         </Social>
       </Header>
-      <Content ref={contentRef}>
+      <Content>
         <IconGrid>
-          {inputSearch.length > 0 &&
-            category &&
-            category.content.filter(
-              icon => icon.slug.includes(inputSearch),
-            ).map((icon) => (
-              <IconCard
-                role='button'
-                key={icon.slug}
-                onClick={handleActiveIcon(icon.slugParent, icon.slug)}
-              >
-                <IconCardContent>
-                  <IconCardInner>
-                    <IconCardIcon
-                      dangerouslySetInnerHTML={{
-                        __html: icon.icon,
-                      }}
-                    />
-                    <IconCardText>{icon.slug}</IconCardText>
-                  </IconCardInner>
-                  <IconCardTag>Free</IconCardTag>
-                </IconCardContent>
-              </IconCard>
-            ))}
-          {inputSearch.length === 0 && icons && icons.map((icon) => (
-            <IconCard
-              role='button'
-              key={icon.slug}
-              onClick={handleActiveIcon(icon.slugParent, icon.slug)}
+          {inputSearch.length === 0 && category && (
+            <IconGridInfinitScroll
+              settings={{
+                actual: 0,
+                next: 36,
+                perPage: 36,
+                delay: 600,
+              }}
+              data={category.content}
+              Sentil={CardLoader}
             >
-              <IconCardContent>
-                <IconCardInner>
-                  <IconCardIcon
-                    dangerouslySetInnerHTML={{
-                      __html: icon.icon,
-                    }}
-                  />
-                  <IconCardText>{icon.slug}</IconCardText>
-                </IconCardInner>
-                <IconCardTag>Free</IconCardTag>
-              </IconCardContent>
-            </IconCard>
-          ))}
+              {(items) => items.map((icon) => (
+                <IconCard
+                  role='button'
+                  key={icon.slug}
+                  onClick={handleActiveIcon(icon.slugParent, icon.slug)}
+                >
+                  <IconCardContent>
+                    <IconCardInner>
+                      <IconCardIcon
+                        dangerouslySetInnerHTML={{
+                          __html: `${icon.icon}`,
+                        }}
+                      />
+                      <IconCardText>{icon.slug}</IconCardText>
+                    </IconCardInner>
+                    <IconCardTag>Free</IconCardTag>
+                  </IconCardContent>
+                </IconCard>
+              ))}
+            </IconGridInfinitScroll>
+          )}
 
-          {inputSearch.length === 0 && loading && <CardLoader ref={sentilRef} />}
+          {inputSearch.length > 0 && filteredIcons && (
+            <IconGridInfinitScroll
+              settings={{
+                actual: 0,
+                next: 36,
+                perPage: 36,
+                delay: 600,
+              }}
+              data={filteredIcons}
+              Sentil={CardLoader}
+            >
+              {(items) => items.map((icon) => (
+                <IconCard
+                  role='button'
+                  key={icon.slug}
+                  onClick={handleActiveIcon(icon.slugParent, icon.slug)}
+                >
+                  <IconCardContent>
+                    <IconCardInner>
+                      <IconCardIcon
+                        dangerouslySetInnerHTML={{
+                          __html: `${icon.icon}`,
+                        }}
+                      />
+                      <IconCardText>{icon.slug}</IconCardText>
+                    </IconCardInner>
+                    <IconCardTag>Free</IconCardTag>
+                  </IconCardContent>
+                </IconCard>
+              ))}
+            </IconGridInfinitScroll>
+          )}
         </IconGrid>
       </Content>
     </Wrapper>
