@@ -70,13 +70,8 @@ export const Main = ({
   }
 
   useEffect(() => {
-    const intersection = new IntersectionObserver((entries) => {
-      if (entries.some(entry => entry.isIntersecting)) handleScroll()
-    })
-
-    if (sentilRef.current) intersection.observe(sentilRef.current)
-    return () => intersection.disconnect()
-  })
+    setInputSearch('')
+  }, [category])
 
   return (
     <Wrapper>
