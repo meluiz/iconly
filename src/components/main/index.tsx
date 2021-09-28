@@ -64,39 +64,8 @@ export const Main = ({
   const handleInputSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setInputSearch(event.target.value)
     if (category) {
-      const data = [...category.content].slice(
-        page.current.actual,
-        page.current.next,
-      )
-
-      setIcons(data)
-      page.current = {
-        ...page.current,
-        actual: page.current.next + 1,
-        next: page.current.next + page.current.perPage,
-      }
-    }
-  }, [category])
-
-  const handleScroll = () => {
-    if (category) {
-      const data = [...category.content].slice(
-        page.current.actual,
-        page.current.next,
-      )
-
-      page.current = {
-        ...page.current,
-        actual: page.current.next + 1,
-        next: page.current.next + page.current.perPage,
-  }
-
-      const timing = setTimeout(() => {
-        setIcons(prev => prev?.concat(data))
-        if (page.current.actual > category.content.length) setLoading(false)
-
-        clearTimeout(timing)
-      }, 600)
+      const filtered = category.content.filter(icon => icon.slug.includes(inputSearch))
+      setFilteredIcons(filtered)
     }
   }
 
