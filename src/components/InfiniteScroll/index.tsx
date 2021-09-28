@@ -9,10 +9,14 @@ type InfiniteScrollSettingsType = {
   delay: number
 }
 
+type SentilProps = {
+  ref: RefObject<HTMLDivElement>
+}
+
 type InfiniteScrollType = {
   settings: InfiniteScrollSettingsType
   data?: Array<Record<string, string>>
-  Sentil: StyledComponent<'div', DefaultTheme, {}, never>
+  Sentil: (props: SentilProps) => JSX.Element
   parentRef?: RefObject<HTMLDivElement>
   children: (item: Array<Record<string, string>>) => ReactNode
 }
