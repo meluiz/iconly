@@ -62,7 +62,8 @@ export const BoxIconName = styled.h1`
   color: white;
   font-size: 24px;
   font-family: 'Circular', 'sans-serif';
-  `
+  text-transform: capitalize; 
+`
 
 export const BoxIconBadge = styled.span`${({ theme }) => css`
  border-radius: 999px;

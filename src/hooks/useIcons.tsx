@@ -70,6 +70,7 @@ export const useIcons = () => {
     const activated = category?.content.find(icon => icon.slug === id)
 
     if (category && activated) {
+      activated.name = activated.name.replace(/-/g, ' ')
       return setIconActivated({
         icon: activated,
         category: category,
