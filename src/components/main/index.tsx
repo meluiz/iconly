@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useEffect, useState } from 'react'
+import { ChangeEvent, MouseEvent, useEffect, useState, useRef } from 'react'
 
 /* ------| Hooks |------ */
 import { CategoriesType, IconsType } from 'hooks/useIcons'
@@ -53,6 +53,7 @@ export const Main = ({
 }: MainType) => {
   const [inputSearch, setInputSearch] = useState('')
   const [filteredIcons, setFilteredIcons] = useState<IconsType[] | undefined>()
+  const containerRef = useRef<HTMLDivElement>(null)
 
   const handleInputSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setInputSearch(event.target.value)
@@ -128,7 +129,7 @@ export const Main = ({
           </SocialList>
         </Social>
       </Header>
-      <Content>
+      <Content ref={containerRef}>
         <IconGrid>
           {inputSearch.length === 0 && category && (
             <IconGridInfinitScroll
@@ -140,6 +141,7 @@ export const Main = ({
               }}
               data={category.content}
               Sentil={CardLoader}
+              parentRef={containerRef}
             >
               {(items) => items.map((icon) => (
                 <IconCard

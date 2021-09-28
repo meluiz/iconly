@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState, RefObject } from 'react'
 import { DefaultTheme, StyledComponent } from 'styled-components'
 
 /* ------| Types |------ */
@@ -14,6 +14,7 @@ type InfiniteScrollType = {
   Sentil: StyledComponent<'div', DefaultTheme, {}, never>
   children: (item: Array<Record<string, string>>) => ReactNode
   data?: Array<Record<string, string>>
+  parentRef?: RefObject<HTMLDivElement>
 }
 
 export const InfiniteScroll = ({
@@ -21,17 +22,18 @@ export const InfiniteScroll = ({
   Sentil,
   children,
   data,
+  parentRef,
 }: InfiniteScrollType) => {
   const [items, setItems] = useState<Array<Record<string, string>>>([])
-  const [hasMore, setHasMore] = useState(false)
+  const [hasMore, setHasMore] = useState(true)
 
   const sentilRef = useRef<HTMLDivElement>(null)
   const page = useRef({ ...settings })
 
   useEffect(() => {
-    setHasMore(true)
     page.current = { ...settings }
 
+    if (parentRef && parentRef.current) parentRef.current.scroll(0, 0)
     if (data) {
       const array = [...data].slice(
         page.current.actual,
